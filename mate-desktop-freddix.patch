@@ -1,0 +1,93 @@
+diff -aurN mate-desktop-1.6.1.orig/schemas/org.mate.applications-browser.gschema.xml.in.in mate-desktop-1.6.1/schemas/org.mate.applications-browser.gschema.xml.in.in
+--- mate-desktop-1.6.1.orig/schemas/org.mate.applications-browser.gschema.xml.in.in	2013-10-27 12:37:40.040306274 +0100
++++ mate-desktop-1.6.1/schemas/org.mate.applications-browser.gschema.xml.in.in	2013-10-27 13:32:10.339953119 +0100
+@@ -1,7 +1,7 @@
+ <schemalist gettext-domain="@GETTEXT_PACKAGE@">
+   <schema id="org.mate.applications-browser" path="/org/mate/desktop/applications/browser/">
+     <key name="exec" type="s">
+-      <default>'mozilla'</default>
++      <default>'firefox'</default>
+       <_summary>Default browser</_summary>
+       <_description>Default browser for all URLs.</_description>
+     </key>
+diff -aurN mate-desktop-1.6.1.orig/schemas/org.mate.interface.gschema.xml.in.in mate-desktop-1.6.1/schemas/org.mate.interface.gschema.xml.in.in
+--- mate-desktop-1.6.1.orig/schemas/org.mate.interface.gschema.xml.in.in	2013-10-27 12:37:40.040306274 +0100
++++ mate-desktop-1.6.1/schemas/org.mate.interface.gschema.xml.in.in	2013-10-27 13:31:34.770585083 +0100
+@@ -6,7 +6,7 @@
+       <_description>Whether Applications should have accessibility support.</_description>
+     </key>
+     <key name="enable-animations" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Enable Animations</_summary>
+       <_description>Whether animations should be displayed. Note: This is a global key, it changes the behaviour of the window manager, the panel etc.</_description>
+     </key>
+@@ -21,7 +21,7 @@
+       <_description>Whether the user can dynamically type a new accelerator when  positioned over an active menuitem.</_description>
+     </key>
+     <key name="toolbar-style" type="s">
+-      <default>'both-horiz'</default>
++      <default>'icons'</default>
+       <_summary>Toolbar Style</_summary>
+       <_description>Toolbar Style. Valid values are "both", "both-horiz", "icons", and "text".</_description>
+     </key>
+@@ -51,7 +51,7 @@
+       <_description>Size of icons in toolbars, either "small-toolbar" or "large-toolbar".</_description>
+     </key>
+     <key name="cursor-blink" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Cursor Blink</_summary>
+       <_description>Whether the cursor should blink.</_description>
+     </key>
+@@ -61,12 +61,12 @@
+       <_description>Length of the cursor blink cycle, in milliseconds.</_description>
+     </key>
+     <key name="icon-theme" type="s">
+-      <default>'menta'</default>
++      <default>'Cheser'</default>
+       <_summary>Icon Theme</_summary>
+       <_description>Icon theme to use for the panel, caja etc.</_description>
+     </key>
+     <key name="gtk-theme" type="s">
+-      <default>'Menta'</default>
++      <default>'Greybird'</default>
+       <_summary>Gtk+ Theme</_summary>
+       <_description>Basename of the default theme used by gtk+.</_description>
+     </key>
+@@ -81,7 +81,7 @@
+       <_description>A '\n' separated list of "name:color" as defined by the 'gtk-color-scheme' setting</_description>
+     </key>
+     <key name="font-name" type="s">
+-      <default>'Sans 10'</default>
++      <default>'Droid Sans 10'</default>
+       <_summary>Default font</_summary>
+       <_description>Name of the default font used by gtk+.</_description>
+     </key>
+@@ -101,12 +101,12 @@
+       <_description>Name of the input method module used by GTK+.</_description>
+     </key>
+     <key name="document-font-name" type="s">
+-      <default>'Sans 10'</default>
++      <default>'Droid Sans 10'</default>
+       <_summary>Document font</_summary>
+       <_description>Name of the default font used for reading documents.</_description>
+     </key>
+     <key name="monospace-font-name" type="s">
+-      <default>'Monospace 10'</default>
++      <default>'Droid Sans Mono 9'</default>
+       <_summary>Monospace font</_summary>
+       <_description>Name of a monospaced (fixed-width) font for use in locations like terminals.</_description>
+     </key>
+diff -aurN mate-desktop-1.6.1.orig/schemas/org.mate.peripherals-mouse.gschema.xml.in.in mate-desktop-1.6.1/schemas/org.mate.peripherals-mouse.gschema.xml.in.in
+--- mate-desktop-1.6.1.orig/schemas/org.mate.peripherals-mouse.gschema.xml.in.in	2013-10-27 12:37:40.040306274 +0100
++++ mate-desktop-1.6.1/schemas/org.mate.peripherals-mouse.gschema.xml.in.in	2013-10-27 13:34:58.853428036 +0100
+@@ -41,7 +41,7 @@
+       <_description>Font name of the cursor. If unset, the default font is used. This value is only propagated to the X server start of each session, so changing it mid-session won't have an effect until the next time you log in.</_description>
+     </key>
+     <key name="cursor-theme" type="s">
+-      <default>''</default>
++      <default>'OpenZone_Black'</default>
+       <_summary>Cursor theme</_summary>
+       <_description>Cursor theme name. Used only by Xservers that support Xcursor, such as XFree86 4.3 and later.</_description>
+     </key>
