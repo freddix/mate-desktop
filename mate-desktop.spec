@@ -1,7 +1,7 @@
 Summary:	Mate desktop library
 Name:		mate-desktop
 Version:	1.6.1
-Release:	4
+Release:	5
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -82,6 +82,7 @@ mate-desktop API documentation.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/sound/events
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -115,6 +116,7 @@ rm -fr $RPM_BUILD_ROOT
 %{_datadir}/libmate-desktop
 %{_desktopdir}/mate-about.desktop
 %{_mandir}/man1/mate-about.1*
+%dir %{_sysconfdir}/sound/events
 
 %files libs
 %defattr(644,root,root,755)
