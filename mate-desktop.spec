@@ -1,11 +1,11 @@
 Summary:	Mate desktop library
 Name:		mate-desktop
-Version:	1.6.2
+Version:	1.8.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	0400f1e8eb8a917d1afae33b16a2f5dd
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	d808e7dd6445991bc41b65982144df00
 Patch0:		%{name}-freddix.patch
 URL:		http://wiki.mate-desktop.org/mate-desktop
 BuildRequires:	autoconf
@@ -13,11 +13,10 @@ BuildRequires:	automake
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libunique-devel
-BuildRequires:	mate-doc-utils
 BuildRequires:	pkg-config
 BuildRequires:	startup-notification-devel
+BuildRequires:	yelp-tools
 Requires(post,postun):	glib-gio-gsettings
-Requires(post,postun):	rarian
 Requires:	fonts-TTF-droid
 Requires:	gtk+-theme-greybird
 Requires:	mate-backgrounds-desktop
@@ -64,8 +63,6 @@ mate-desktop API documentation.
 %build
 %{__gtkdocize}
 %{__intltoolize}
-%{__gnome_doc_prepare}
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
@@ -74,7 +71,6 @@ mate-desktop API documentation.
 %configure \
 	--disable-desktop-docs		\
 	--disable-schemas-compile	\
-	--disable-scrollkeeper		\
 	--disable-silent-rules		\
 	--disable-static		\
 	--with-html-dir=%{_gtkdocdir}
@@ -91,18 +87,16 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/sound/events
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,ug,yo}
 
-%find_lang %{name} --with-mate --with-omf
+%find_lang %{name} --all-name --with-gnome
 
 %clean
 rm -fr $RPM_BUILD_ROOT
 
 %post
 %update_gsettings_cache
-%scrollkeeper_update_post
 
 %postun
 %update_gsettings_cache
-%scrollkeeper_update_postun
 
 %post	libs -p /usr/sbin/ldconfig
 %postun	libs -p /usr/sbin/ldconfig
