@@ -10,6 +10,7 @@ Patch0:		%{name}-freddix.patch
 URL:		http://wiki.mate-desktop.org/mate-desktop
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	dconf-devel
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libunique-devel
