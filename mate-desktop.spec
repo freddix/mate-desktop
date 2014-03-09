@@ -62,7 +62,6 @@ mate-desktop API documentation.
     -i -e '/MATE_DEBUG_CHECK/d' configure.ac
 
 %build
-%{__gtkdocize}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
