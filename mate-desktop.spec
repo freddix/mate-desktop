@@ -1,11 +1,11 @@
 Summary:	Mate desktop library
 Name:		mate-desktop
-Version:	1.8.0
+Version:	1.8.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	d808e7dd6445991bc41b65982144df00
+# Source0-md5:	985c9396685bf31217f5322a6e3cbaff
 Patch0:		%{name}-freddix.patch
 URL:		http://wiki.mate-desktop.org/mate-desktop
 BuildRequires:	autoconf
