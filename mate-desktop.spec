@@ -1,7 +1,7 @@
 Summary:	Mate desktop library
 Name:		mate-desktop
 Version:	1.8.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
@@ -85,7 +85,6 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/sound/events
 
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/*.convert
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,ug,yo}
 
 %find_lang %{name} --all-name --with-gnome
 
